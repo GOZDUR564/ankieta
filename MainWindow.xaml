@@ -1,0 +1,323 @@
+<Window x:Class="SurveyApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ankieta Motoryzacyjna" Height="800" Width="600"
+        Background="#F5F5F5"
+        WindowStartupLocation="CenterScreen"
+        Icon="pack://application:,,,/Resources/car-icon.ico">
+    <Grid Margin="20">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <!-- Nagłówek -->
+                <TextBlock Text="ANKIETA MOTORYZACYJNA" 
+                           FontSize="28" 
+                           FontWeight="Bold" 
+                           Foreground="#1F497D"
+                           Margin="0,0,0,20"
+                           TextAlignment="Center"/>
+                
+                <TextBlock Text="Prosimy o wypełnienie poniższej ankiety dotyczącej Waszego samochodu"
+                           FontSize="14"
+                           Foreground="#666666"
+                           Margin="0,0,0,20"
+                           TextAlignment="Center"/>
+
+                <!-- Sekcja 1: Dane osobowe -->
+                <Border Background="White" 
+                        BorderBrush="#CCCCCC" 
+                        BorderThickness="1" 
+                        CornerRadius="8"
+                        Padding="15"
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="1. Dane Osobowe" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#1F497D"
+                                   Margin="0,0,0,15"/>
+
+                        <!-- Imię -->
+                        <TextBlock Text="Imię i Nazwisko:" 
+                                   FontSize="12" 
+                                   Foreground="#333333"
+                                   Margin="0,0,0,5"/>
+                        <TextBox x:Name="TbNazwisko" 
+                                 Height="35" 
+                                 Padding="10"
+                                 FontSize="12"
+                                 Margin="0,0,0,15"
+                                 BorderThickness="1"
+                                 BorderBrush="#CCCCCC"
+                                 Background="White"/>
+
+                        <!-- Email -->
+                        <TextBlock Text="Email:" 
+                                   FontSize="12" 
+                                   Foreground="#333333"
+                                   Margin="0,0,0,5"/>
+                        <TextBox x:Name="TbEmail" 
+                                 Height="35" 
+                                 Padding="10"
+                                 FontSize="12"
+                                 Margin="0,0,0,15"
+                                 BorderThickness="1"
+                                 BorderBrush="#CCCCCC"
+                                 Background="White"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Sekcja 2: Informacje o samochodzie -->
+                <Border Background="White" 
+                        BorderBrush="#CCCCCC" 
+                        BorderThickness="1" 
+                        CornerRadius="8"
+                        Padding="15"
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="2. Informacje o Samochodzie" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#1F497D"
+                                   Margin="0,0,0,15"/>
+
+                        <!-- Marka -->
+                        <TextBlock Text="Marka samochodu:" 
+                                   FontSize="12" 
+                                   Foreground="#333333"
+                                   Margin="0,0,0,5"/>
+                        <ComboBox x:Name="CbMarka" 
+                                  Height="35" 
+                                  Padding="10"
+                                  FontSize="12"
+                                  Margin="0,0,0,15"
+                                  Background="White">
+                            <ComboBoxItem>-- Wybierz markę --</ComboBoxItem>
+                            <ComboBoxItem>Volkswagen</ComboBoxItem>
+                            <ComboBoxItem>BMW</ComboBoxItem>
+                            <ComboBoxItem>Mercedes-Benz</ComboBoxItem>
+                            <ComboBoxItem>Audi</ComboBoxItem>
+                            <ComboBoxItem>Toyota</ComboBoxItem>
+                            <ComboBoxItem>Honda</ComboBoxItem>
+                            <ComboBoxItem>Ford</ComboBoxItem>
+                            <ComboBoxItem>Škoda</ComboBoxItem>
+                            <ComboBoxItem>Opel</ComboBoxItem>
+                            <ComboBoxItem>Inne</ComboBoxItem>
+                        </ComboBox>
+
+                        <!-- Rok produkcji -->
+                        <TextBlock Text="Rok produkcji:" 
+                                   FontSize="12" 
+                                   Foreground="#333333"
+                                   Margin="0,0,0,5"/>
+                        <TextBox x:Name="TbRokProdukcji" 
+                                 Height="35" 
+                                 Padding="10"
+                                 FontSize="12"
+                                 Margin="0,0,0,15"
+                                 BorderThickness="1"
+                                 BorderBrush="#CCCCCC"
+                                 Background="White"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Sekcja 3: Typ paliwa -->
+                <Border Background="White" 
+                        BorderBrush="#CCCCCC" 
+                        BorderThickness="1" 
+                        CornerRadius="8"
+                        Padding="15"
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="3. Typ Paliwa" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#1F497D"
+                                   Margin="0,0,0,15"/>
+
+                        <RadioButton x:Name="RbBenzyna" 
+                                     Content="Benzyna" 
+                                     FontSize="12"
+                                     Margin="0,0,0,8"/>
+                        <RadioButton x:Name="RbDiesel" 
+                                     Content="Diesel" 
+                                     FontSize="12"
+                                     Margin="0,0,0,8"/>
+                        <RadioButton x:Name="RbElektryczny" 
+                                     Content="Elektryczny" 
+                                     FontSize="12"
+                                     Margin="0,0,0,8"/>
+                        <RadioButton x:Name="RbHybrid" 
+                                     Content="Hybrid" 
+                                     FontSize="12"
+                                     Margin="0,0,0,8"/>
+                        <RadioButton x:Name="RbGaz" 
+                                     Content="Gaz (LPG/CNG)" 
+                                     FontSize="12"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Sekcja 4: Wyposażenie -->
+                <Border Background="White" 
+                        BorderBrush="#CCCCCC" 
+                        BorderThickness="1" 
+                        CornerRadius="8"
+                        Padding="15"
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="4. Wyposażenie Bezpieczeństwa" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#1F497D"
+                                   Margin="0,0,0,15"/>
+
+                        <CheckBox x:Name="ChkABS" 
+                                  Content="ABS (Antyblokowny System Hamowania)" 
+                                  FontSize="12"
+                                  Margin="0,0,0,8"/>
+                        <CheckBox x:Name="ChkESP" 
+                                  Content="ESP (Elektroniczny Program Stabilności)" 
+                                  FontSize="12"
+                                  Margin="0,0,0,8"/>
+                        <CheckBox x:Name="ChkTempomat" 
+                                  Content="Tempomat" 
+                                  FontSize="12"
+                                  Margin="0,0,0,8"/>
+                        <CheckBox x:Name="ChkKamera" 
+                                  Content="Kamera cofania" 
+                                  FontSize="12"
+                                  Margin="0,0,0,8"/>
+                        <CheckBox x:Name="ChkParktronic" 
+                                  Content="Parktronic" 
+                                  FontSize="12"
+                                  Margin="0,0,0,8"/>
+                        <CheckBox x:Name="ChkKlimaty" 
+                                  Content="Klimatyzacja automatyczna" 
+                                  FontSize="12"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Sekcja 5: Ocena -->
+                <Border Background="White" 
+                        BorderBrush="#CCCCCC" 
+                        BorderThickness="1" 
+                        CornerRadius="8"
+                        Padding="15"
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="5. Ocena Zadowolenia" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#1F497D"
+                                   Margin="0,0,0,15"/>
+
+                        <TextBlock Text="Jak oceniasz swój samochód? (1 = bardzo niezadowolony, 10 = bardzo zadowolony)" 
+                                   FontSize="11"
+                                   Foreground="#666666"
+                                   Margin="0,0,0,10"/>
+
+                        <StackPanel Orientation="Horizontal" 
+                                    VerticalAlignment="Center"
+                                    Margin="0,0,0,15">
+                            <Slider x:Name="SliderOcena" 
+                                    Minimum="1" 
+                                    Maximum="10" 
+                                    Value="5"
+                                    Width="300"
+                                    VerticalAlignment="Center"/>
+                            <TextBlock x:Name="TbOcenaWartość" 
+                                       Text="5" 
+                                       FontSize="14"
+                                       FontWeight="Bold"
+                                       Foreground="#1F497D"
+                                       Margin="15,0,0,0"
+                                       Width="30"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- Sekcja 6: Data przeglądu -->
+                <Border Background="White" 
+                        BorderBrush="#CCCCCC" 
+                        BorderThickness="1" 
+                        CornerRadius="8"
+                        Padding="15"
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="6. Ostatni Przegląd" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#1F497D"
+                                   Margin="0,0,0,15"/>
+
+                        <TextBlock Text="Data ostatniego przeglądu:" 
+                                   FontSize="12" 
+                                   Foreground="#333333"
+                                   Margin="0,0,0,5"/>
+                        <DatePicker x:Name="DpPrzegląd" 
+                                    Height="35"
+                                    Padding="10"
+                                    FontSize="12"
+                                    Background="White"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Sekcja 7: Uwagi -->
+                <Border Background="White" 
+                        BorderBrush="#CCCCCC" 
+                        BorderThickness="1" 
+                        CornerRadius="8"
+                        Padding="15"
+                        Margin="0,0,0,20">
+                    <StackPanel>
+                        <TextBlock Text="7. Dodatkowe Uwagi" 
+                                   FontSize="16" 
+                                   FontWeight="Bold" 
+                                   Foreground="#1F497D"
+                                   Margin="0,0,0,15"/>
+
+                        <TextBlock Text="Coś jeszcze chciałbyś nam powiedzieć?" 
+                                   FontSize="12" 
+                                   Foreground="#333333"
+                                   Margin="0,0,0,5"/>
+                        <TextBox x:Name="TbUwagi" 
+                                 Height="80" 
+                                 Padding="10"
+                                 FontSize="12"
+                                 AcceptsReturn="True"
+                                 TextWrapping="Wrap"
+                                 BorderThickness="1"
+                                 BorderBrush="#CCCCCC"
+                                 Background="White"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Przyciski -->
+                <StackPanel Orientation="Horizontal" 
+                            HorizontalAlignment="Center"
+                            Margin="0,20,0,0">
+                    <Button x:Name="BtnCzyść" 
+                            Content="🗑️ Wyczyść" 
+                            Width="150" 
+                            Height="40"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Background="#E74C3C"
+                            Foreground="White"
+                            Margin="0,0,15,0"
+                            Click="BtnCzyść_Click"
+                            Cursor="Hand"/>
+                    <Button x:Name="BtnZatwierdź" 
+                            Content="✓ Zatwierdź" 
+                            Width="150" 
+                            Height="40"
+                            FontSize="14"
+                            FontWeight="Bold"
+                            Background="#27AE60"
+                            Foreground="White"
+                            Click="BtnZatwierdź_Click"
+                            Cursor="Hand"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

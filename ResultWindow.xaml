@@ -1,0 +1,57 @@
+<Window x:Class="SurveyApp.ResultWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Wyniki Ankiety" Height="600" Width="700"
+        Background="#F5F5F5"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock Text="WYNIKI ANKIETY" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="#1F497D"
+                       Margin="0,0,0,20"
+                       TextAlignment="Center"/>
+
+            <Border Background="White" 
+                    BorderBrush="#27AE60" 
+                    BorderThickness="2" 
+                    CornerRadius="8"
+                    Padding="15"
+                    Margin="0,0,0,20">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Height="400">
+                    <TextBlock x:Name="TbWyniki" 
+                               FontFamily="Courier New"
+                               FontSize="12"
+                               Foreground="#333333"
+                               TextWrapping="Wrap"
+                               LineHeight="18"/>
+                </ScrollViewer>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" 
+                        HorizontalAlignment="Center">
+                <Button Content="📋 Kopiuj" 
+                        Width="120" 
+                        Height="40"
+                        FontSize="12"
+                        FontWeight="Bold"
+                        Background="#3498DB"
+                        Foreground="White"
+                        Margin="0,0,10,0"
+                        Click="BtnKopiuj_Click"
+                        Cursor="Hand"/>
+                <Button Content="✓ Zamknij" 
+                        Width="120" 
+                        Height="40"
+                        FontSize="12"
+                        FontWeight="Bold"
+                        Background="#95A5A6"
+                        Foreground="White"
+                        Click="BtnZamknij_Click"
+                        Cursor="Hand"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
